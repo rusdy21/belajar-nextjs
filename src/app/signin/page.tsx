@@ -1,9 +1,9 @@
 'use client';
-import Button from "../Button";
-import Navbar from "../NavBar";
+import Button from "../components/Button";
+import Navbar from "../components/NavBar";
 import Head from "next/head";
 import Link from "next/link";
-import TextInput from "../TextInput";
+import TextInput from "../components/TextInput";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { error } from "console";
