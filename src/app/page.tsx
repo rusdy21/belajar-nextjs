@@ -2,13 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import NavBar from "./components/NavBar";
 import Article from "./components/Article";
+import Category from "./components/Category";
 
 export default function Home() {
   const categories = [...Array(10)].map((_, index) => {
     return {
       id: index + 1,
       slug: "technology",
-      label: "Technology",
+      name: "Technology",
     };
   });
 
@@ -36,6 +37,14 @@ export default function Home() {
       </Head>
       <NavBar />
       <div className="w-[720px] mx-auto py-24">
+        <div className="mb-16">
+          <p className="font-sans text-slate-900 text-sm mb-4">Your Categories</p>
+          <div className="flex flex-wrap gap-3">
+          {categories.map((category) => 
+          <Category key={category.id} label={category.name}/>)}
+          </div>
+          
+        </div>
         {articles.map((article) => (
           <Article
             key={article.id}
